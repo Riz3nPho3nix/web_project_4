@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Around The U.S.</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+    <header class="header">
+        <img src="./images/logo-white.svg" alt="Around the US logo" class="header__logo">
+    </header>
+    <main class="main">
+        <section class="profile">
+            <div class="profile__avatar">
+              <div class="profile__ellipse">
+                <img src="./images/cousteau.jpg" alt="Jacques Cousteau portrait" class="profile__picture">
+              </div>
+            </div>
+            <div class="profile__info">
+              <h1 class="profile__name" id="profile__name">Jacques Cousteau</h1>
+              <p class="profile__job" id="profile__job">Explorer</p>
+              <button class="profile__edit link"></button>
+            </div>
+            <button class="profile__add-button link"></button>
+        </section>
+        <ul class="thumbs">
+            <li class="thumb">
+                <img src="./images/yosemite-valley.jpg" alt="Yosemite Valley river" class="thumb__image">
+                <div class="thumb__label">
+                    <h2 class="thumb__heading">Yosemite Valley</h2>
+                    <img src="./images/heart.svg" alt="heart" class="thumb__heart">
+                </div>
+            </li>
+            <li class="thumb">
+                <img src="./images/lake-louise.jpg" alt="Lake Louise" class="thumb__image">
+                <div class="thumb__label">
+                    <h2 class="thumb__heading">Lake Louise</h2>
+                    <img src="./images/heart.svg" alt="heart" class="thumb__heart">
+                </div>
+            </li>
+            <li class="thumb">
+                <img src="./images/bald-mountains.jpg" alt="Bald Mountains at sunrise" class="thumb__image">
+                <div class="thumb__label">
+                    <h2 class="thumb__heading">Bald Mountains</h2>
+                    <img src="./images/heart.svg" alt="heart" class="thumb__heart">
+                </div>
+            </li>
+            <li class="thumb">
+                <img src="./images/latemar.jpg" alt="Mountain peaks at night" class="thumb__image">
+                <div class="thumb__label">
+                    <h2 class="thumb__heading">Latemar</h2>
+                    <img src="./images/heart.svg" alt="heart" class="thumb__heart">
+                </div>
+            </li>
+            <li class="thumb">
+                <img src="./images/vanois-national.jpg" alt="Rocky lakeshore" class="thumb__image">
+                <div class="thumb__label">
+                    <h2 class="thumb__heading">Vanois National...</h2>
+                    <img src="./images/heart.svg" alt="heart" class="thumb__heart">
+                </div>
+            </li>
+            <li class="thumb">
+                <img src="./images/lago-di-braies.jpg" alt="Mountain lake pier" class="thumb__image">
+                <div class="thumb__label">
+                    <h2 class="thumb__heading">Lago di Braies</h2>
+                    <img src="./images/heart.svg" alt="heart" class="thumb__heart">
+                </div>
+            </li>
+        </ul>
+      <div class="modal" id="edit">
+        <div class="modal__window">
+          <span class="close link">&times;</span>
+          <h2 class="modal__heading">Edit Profile</h2>
+          <form action="" class="modal__form">
+            <input type="text" name="profile_name" id="">
+            <input type="text" name="profile_job" id="">
+            <button class="modal__btn" id="modal_btn">Save</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Brian Wilson</p>
+    </footer>
+</body>
+</html>
