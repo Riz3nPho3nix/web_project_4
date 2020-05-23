@@ -18,8 +18,8 @@
               </div>
             </div>
             <div class="profile__info">
-              <h1 class="profile__name" id="profile__name">Jacques Cousteau</h1>
-              <p class="profile__job" id="profile__job">Explorer</p>
+              <h1 class="profile__name">Jacques Cousteau</h1>
+              <p class="profile__job">Explorer</p>
               <button class="profile__edit link"></button>
             </div>
             <button class="profile__add-button link"></button>
@@ -68,14 +68,14 @@
                 </div>
             </li>
         </ul>
-      <div class="modal" id="edit">
+      <div class="modal">
         <div class="modal__window">
-          <span class="close link">&times;</span>
+          <img class="close link" src="images/plus.svg">
           <h2 class="modal__heading">Edit Profile</h2>
           <form action="" class="modal__form">
-            <input type="text" name="profile_name" id="">
-            <input type="text" name="profile_job" id="">
-            <button class="modal__btn" id="modal_btn">Save</button>
+            <input class="modal__input" type="text" name="set_name" id="set_name">
+            <input class="modal__input" type="text" name="set_job" id="set_job">
+            <button class="modal__btn">Save</button>
           </form>
         </div>
       </div>
@@ -83,5 +83,6 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Brian Wilson</p>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
