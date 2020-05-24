@@ -1,16 +1,17 @@
 # Project 4: Around The U.S.
 
-### Overview
+And now, we code!!
 
-* Figma
-* Images
+Project 4 is an introduction to Javascript. We learned about a few new things:
 
-**Figma**
+* DOM - Document Object Model
 
-* [Link to the project in Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+* Getting data from HTML with querySelector()
 
-**Images**
+* Editing HTML markup with innerHTML and editing classes
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+* Creating event handlers to update the markup when a button is clicked
 
-Have fun with JavaScript!
+# Website
+
+The link to my website is [here](https://riz3npho3nix.github.io/web_project_4)
