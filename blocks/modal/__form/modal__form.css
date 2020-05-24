@@ -1,0 +1,10 @@
+.modal__form {
+  margin-left: 36px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 440px){
+  .modal__form {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,17 @@
+.modal__input {
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0 auto 30px;
+  width: 358px;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+@media screen and (max-width: 440px){
+  .modal__input {
+    font-size: 12px;
+    width: 200px;
+    margin-bottom: 20px;
+    line-height: 15px;
+  }
+}

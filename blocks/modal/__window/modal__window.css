@@ -1,0 +1,16 @@
+.modal__window {
+  position: relative;
+  width: 430px;
+  height: 330px;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 1px;
+}
+
+@media screen and (max-width: 440px){
+  .modal__window {
+    width: 240px;
+    height: 258px;
+  }
+}
