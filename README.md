@@ -14,4 +14,4 @@ Project 4 is an introduction to Javascript. We learned about a few new things:
 
 # Website
 
-The link to my website is [here](https://riz3npho3nix.github.io/web_project_4)
+The link to my website is [here](https://riz3npho3nix.github.io/web_project_4). Hope you enjoy!

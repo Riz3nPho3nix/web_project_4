@@ -1,6 +1,7 @@
 @import url('./__heading/favorite__heading.css');
 @import url('./__image/favorite__image.css');
 @import url('./__label/favorite__label.css');
+@import url('./__heart/favorite__heart.css');
 
 .favorite {
   width: 282px;
@@ -12,3 +13,4 @@
   display: flex;
   flex-wrap: wrap;
 }
+

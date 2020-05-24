@@ -10,5 +10,7 @@
   .profile__info {
     min-width: 280px;
     width: calc(100% - 36px);
+    margin-top: 10px;
+    height: 70px;
   }
 }
