@@ -29,7 +29,7 @@
                 </div>
                 <div class="favorite__label">
                     <h2 class="favorite__heading">Yosemite Valley</h2>
-                    <button class="favorite__heart" onclick="makeFave(this)"></button>
+                    <button class="favorite__heart" onclick="toggleHeart(this)"></button>
                 </div>
             </li>
             <li class="favorite">
@@ -38,7 +38,7 @@
               </div>
                 <div class="favorite__label">
                     <h2 class="favorite__heading">Lake Louise</h2>
-                    <button class="favorite__heart" onclick="makeFave(this)"></button>
+                    <button class="favorite__heart" onclick="toggleHeart(this)"></button>
                 </div>
             </li>
             <li class="favorite">
@@ -47,7 +47,7 @@
               </div>
                 <div class="favorite__label">
                     <h2 class="favorite__heading">Bald Mountains</h2>
-                    <button class="favorite__heart" onclick="makeFave(this)"></button>
+                    <button class="favorite__heart" onclick="toggleHeart(this)"></button>
                 </div>
             </li>
             <li class="favorite">
@@ -56,7 +56,7 @@
               </div>
                 <div class="favorite__label">
                     <h2 class="favorite__heading">Latemar</h2>
-                    <button class="favorite__heart" onclick="makeFave(this)"></button>
+                    <button class="favorite__heart" onclick="toggleHeart(this)"></button>
                 </div>
             </li>
             <li class="favorite">
@@ -65,7 +65,7 @@
               </div>
                 <div class="favorite__label">
                     <h2 class="favorite__heading">Vanoise National Park</h2>
-                    <button class="favorite__heart" onclick="makeFave(this)"></button>
+                    <button class="favorite__heart" onclick="toggleHeart(this)"></button>
                 </div>
             </li>
             <li class="favorite">
@@ -74,22 +74,31 @@
               </div>
                 <div class="favorite__label">
                     <h2 class="favorite__heading">Lago di Braies</h2>
-                    <button class="favorite__heart" onclick="makeFave(this)"></button>
+                    <button class="favorite__heart" onclick="toggleHeart(this)"></button>
                 </div>
             </li>
         </ul>
-      <div class="modal overlay">
+      <div class="modal">
         <div class="modal__window">
           <button class="modal__close link"></button>
-          <h2 class="modal__heading">Edit Profile</h2>
           <form action="submit" class="modal__form">
+            <h2 class="modal__heading">Edit Profile</h2>
             <input class="modal__input set_name" type="text" name="set_name" id="set_name">
             <input class="modal__input set_job" type="text" name="set_job" id="set_job">
-            <button class="modal__btn">Save</button>
+            <button class="modal__btn button">Save</button>
           </form>
         </div>
       </div>
-      <div class="overlay">
+      <div class="new-favorite modal">
+        <div class="modal__window">
+          <button class="new-favorite__close modal__close link"></button>
+          <form action="submit" class="modal__form">
+            <h2 class="modal__heading">New place</h2>
+            <input class="modal__input location" type="text" placeholder="Title">
+            <input class="modal__input image-path" type="text" placeholder="Image link">
+            <button class="new-favorite__btn button">Create</button>
+          </form>
+        </div>
       </div>
     </main>
     <footer class="footer">

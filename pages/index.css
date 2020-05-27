@@ -8,5 +8,5 @@
 @import url('../blocks/favorite/favorite.css');
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/modal/modal.css');
-@import url('../blocks/overlay/overlay.css');
-@import url('../blocks/overlay/__open/overlay__open.css');
+@import url('../blocks/button/button.css');
+@import url('../blocks/modal/__open/modal__open.css');
