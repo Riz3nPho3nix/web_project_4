@@ -2,6 +2,8 @@
 @import url('./__image/favorite__image.css');
 @import url('./__label/favorite__label.css');
 @import url('./__heart/favorite__heart.css');
+@import url('./__delete-btn/favorite__delete-btn.css');
+@import url('./__liked/favorite__liked.css');
 
 .favorite {
   width: 282px;
@@ -12,5 +14,5 @@
   background-color: #fff;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
-

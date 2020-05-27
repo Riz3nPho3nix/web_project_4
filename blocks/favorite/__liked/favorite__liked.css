@@ -1,0 +1,8 @@
+.favorite__liked {
+    background-image: url('../../../images/heart-black.svg');
+}
+
+/* .favorite__liked:hover {
+    cursor: default;
+    opacity: 1;
+} */

@@ -1,0 +1,16 @@
+.favorite__delete-btn {
+    background-color: transparent;
+    border: none;
+    background-image: url('../../../images/recycle.svg');
+    background-size: 19px;
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    top: 19px;
+    right: 15px;
+}
+
+.favorite__delete-btn:hover {
+    cursor: pointer;
+    opacity: .6;
+}

@@ -8,17 +8,27 @@ const name = document.querySelector('.profile__name');
 const job = document.querySelector('.profile__job');
 const editName = document.querySelector('.set_name');
 const editJob = document.querySelector('.set_job');
+const heart = document.querySelectorAll('.favorite__heart');
+const fave = document.querySelectorAll('.favorite');
 
 
 // Create Modal open and close functions
 function closeModal(){
-    modal.classList.toggle('modal__open');
+    modal.classList.toggle('overlay__open');
 }
 
 function openModal(){
-    modal.classList.toggle('modal__open');
+    modal.classList.toggle('overlay__open');
     editName.value = name.textContent;
     editJob.value = job.textContent;
+}
+
+function makeFave(heart){
+  heart.classList.toggle('favorite__liked');
+}
+
+function removeFavorite(fave){
+  fave.remove();
 }
 
 // Create form completion button
