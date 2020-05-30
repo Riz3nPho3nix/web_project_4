@@ -7,7 +7,7 @@ const name = document.querySelector('.profile__name');
 const job = document.querySelector('.profile__job');
 const editName = document.querySelector('.set_name');
 const editJob = document.querySelector('.set_job');
-const heart = document.querySelectorAll('.favorite__heart');
+const heart = document.querySelector('.favorite__heart');
 const favorite = document.querySelectorAll('.favorite');
 const favorites = document.querySelector('.favorites');
 const add = document.querySelector('.profile__add-btn');
@@ -16,7 +16,7 @@ const newPic = document.querySelector('.image-path');
 const newName = document.querySelector('.location');
 const newFave = document.querySelector('.new-favorite__btn');
 const closeFave = document.querySelector('.new-favorite__close');
-const deleteFave = document.querySelectorAll('.favorite__delete-btn');
+const deleteFave = document.querySelector('.favorite__delete-btn');
 
 
 // Close profile modal without saving changes
@@ -30,7 +30,7 @@ function openModal(){
     editJob.value = job.textContent;
 }
 // Add and remove full heart on places
-function toggleHeart(){
+function toggleHeart(e){
   this.classList.toggle('favorite__liked');
 }
 // Remove place from list on site
@@ -75,5 +75,18 @@ edit.addEventListener('click', openModal);
 newFave.addEventListener('click', newFavorite);
 add.addEventListener('click', toggleFave);
 closeFave.addEventListener('click', toggleFave);
-heart.forEach(heart => heart.addEventListener('click', toggleHeart));
-deleteFave.forEach(deleteFave => deleteFave.addEventListener('click', removeFavorite));
+favorites.addEventListener('click', (e) => {
+  if (e.target === heart){
+    //e.target.classList.toggle('favorite__liked');
+    console.log("HEART!");
+    e.stopPropagation;
+  } else if (e.target === deleteFave){
+    //e.target.closest('.favorite').remove();
+    console.log("BIN!");
+    e.stopPropagation;
+  } else {
+  console.log("CLICKED!");
+  e.stopPropagation;
+  }
+});
+
