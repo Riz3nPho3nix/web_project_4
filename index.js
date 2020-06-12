@@ -1,7 +1,7 @@
 // Declare variables
 const editProfile = document.querySelector('.profile__edit');
 const editModal = document.querySelector('.profile-edit');
-const save = document.querySelector('.modal__btn');
+const save = editModal.querySelector('.modal__form');
 const editClose = editModal.querySelector('.modal__close');
 const name = document.querySelector('.profile__name');
 const job = document.querySelector('.profile__job');
@@ -10,7 +10,7 @@ const editJob = document.querySelector('.set_job');
 const cards = document.querySelector('.cards');
 const add = document.querySelector('.profile__add-btn');
 const addCard = document.querySelector('.new-card');
-const newCard = document.querySelector('.new-card__btn');
+const newCard = addCard.querySelector('.modal__form');
 const cardClose = addCard.querySelector('.modal__close');
 const cardName = document.querySelector('.location');
 const cardUrl = document.querySelector('.image-path');
