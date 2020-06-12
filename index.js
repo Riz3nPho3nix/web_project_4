@@ -10,8 +10,6 @@ const editJob = document.querySelector('.set_job');
 const cards = document.querySelector('.cards');
 const add = document.querySelector('.profile__add-btn');
 const addCard = document.querySelector('.new-card');
-const newPic = document.querySelector('.image-path');
-const newName = document.querySelector('.location');
 const newCard = document.querySelector('.new-card__btn');
 const cardClose = addCard.querySelector('.modal__close');
 const cardName = document.querySelector('.location');
@@ -50,6 +48,29 @@ const initialCards = [
 
 const cardTemplate = document.querySelector(".card-template").content.querySelector(".card");
 
+
+// Close profile modal without saving changes
+function toggleModal(modal){
+    modal.classList.toggle('modal__open');
+}
+
+function displayImage(title, link){
+  modalImage.src = link;
+  modalImage.alt = title;
+  modalTitle.textContent = title;
+  toggleModal(imageModal);
+};
+// Add and remove full heart on places
+function toggleHeart(e){
+  e.target.classList.toggle('card__liked');
+}
+// Remove place from list on site
+function removeCard(e){
+  e.target.closest('.card').remove();
+  e.stopPropagation();
+}
+
+// Create cards from initial array
 function createCard(title, image) {
 
   const cardElement = cardTemplate.cloneNode(true);
@@ -76,40 +97,9 @@ function createCard(title, image) {
 
   return cardElement;
 };
-
-function renderCard(title, image){
+// Insert created cards to page
+function renderCard(title, image) {
   cards.prepend(createCard(title, image));
-}
-// Close profile modal without saving changes
-function toggleModal(modal){
-    modal.classList.toggle('modal__open');
-}
-
-function displayImage(title, link){
-  modalImage.src = link;
-  modalImage.alt = title;
-  modalTitle.textContent = title;
-  toggleModal(imageModal);
-};
-// Add and remove full heart on places
-function toggleHeart(e){
-  e.target.classList.toggle('card__liked');
-}
-// Remove place from list on site
-function removeCard(e){
-  e.target.closest('.card').remove();
-  e.stopPropagation();
-}
-// Create form completion button
-function updateProfile(e) {
-  // Stop the browser from submitting the form in the default way.
-  e.preventDefault();
-
-  // Insert new values using the textContent property of the querySelector() method
-  name.textContent = editName.value;
-  job.textContent = editJob.value;
-  
-  toggleModal(editModal);
 }
 
 // Add places to page
@@ -117,22 +107,39 @@ initialCards.forEach((data) => {
   renderCard(data.name, data.link);
 })
 // Create Event Listeners
-save.addEventListener('click',updateProfile);
+
+// I am not sure if this is what you meant by add listeners instead of save button, if this is incorrect can you please elaborate on what you are looking for?
+save.addEventListener('click', (e) => {
+  // Stop the browser from submitting the form in the default way.
+  e.preventDefault();
+
+  // Insert new values using the textContent property of the querySelector() method
+  name.textContent = editName.value;
+  job.textContent = editJob.value;
+
+  toggleModal(editModal);
+});
+
 editClose.addEventListener('click', () => {
   toggleModal(editModal);
 });
+
 editProfile.addEventListener('click', () => {
   toggleModal(editModal);
 });
+
 add.addEventListener('click', () => {
   toggleModal(addCard);
 });
+
 cardClose.addEventListener('click', () => {
   toggleModal(addCard);
 });
+
 imageClose.addEventListener('click', () => {
   toggleModal(imageModal);
 });
+
 newCard.addEventListener('click', (e) => {
   e.preventDefault();
   renderCard(cardName.value, cardUrl.value);
