@@ -6,7 +6,10 @@
 @import url('./__input/modal__input.css');
 
 .modal {
-    display: none;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
     position: fixed;
     align-items: center;
     justify-content: center;
@@ -17,4 +20,5 @@
     left: 0;
     top: 0;
     overflow: auto;
+    transition: visibility 1s, opacity .5s;
   }

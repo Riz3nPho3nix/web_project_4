@@ -1,4 +1,4 @@
-.favorite__heart {
+.card__heart {
   background-image: url('../../../images/heart.svg');
   width: 20px;
   background-color: transparent;
@@ -8,7 +8,7 @@
   border: 0;
 }
 
-.favorite__heart:hover {
+.card__heart:hover {
   cursor: pointer;
   opacity: .6;
 }

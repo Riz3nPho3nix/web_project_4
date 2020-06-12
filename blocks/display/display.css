@@ -1,0 +1,7 @@
+@import url('./__window/display__window.css');
+@import url('./__caption/display__caption.css');
+@import url('./__image/display__image.css');
+
+.display {
+  background-color: rgba(0, 0, 0, .9);
+}

@@ -1,4 +1,4 @@
-.favorite__delete-btn {
+.card__delete-btn {
     background-color: transparent;
     border: none;
     background-image: url('../../../images/recycle.svg');
@@ -10,7 +10,7 @@
     right: 15px;
 }
 
-.favorite__delete-btn:hover {
+.card__delete-btn:hover {
     cursor: pointer;
     opacity: .6;
 }

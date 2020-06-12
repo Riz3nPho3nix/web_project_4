@@ -1,0 +1,18 @@
+@import url('./__heading/card__heading.css');
+@import url('./__image/card__image.css');
+@import url('./__label/card__label.css');
+@import url('./__heart/card__heart.css');
+@import url('./__delete-btn/card__delete-btn.css');
+@import url('./__liked/card__liked.css');
+
+.card {
+  width: 282px;
+  height: 361px;
+  padding: 0;
+  list-style-type: none;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}

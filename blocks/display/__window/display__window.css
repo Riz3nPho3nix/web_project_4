@@ -1,0 +1,8 @@
+.display__window {
+  background: transparent;
+  border-radius: 0;
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+}
