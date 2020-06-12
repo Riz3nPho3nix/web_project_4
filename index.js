@@ -107,9 +107,7 @@ initialCards.forEach((data) => {
   renderCard(data.name, data.link);
 })
 // Create Event Listeners
-
-// I am not sure if this is what you meant by add listeners instead of save button, if this is incorrect can you please elaborate on what you are looking for?
-save.addEventListener('click', (e) => {
+save.addEventListener('submit', (e) => {
   // Stop the browser from submitting the form in the default way.
   e.preventDefault();
 
@@ -140,10 +138,8 @@ imageClose.addEventListener('click', () => {
   toggleModal(imageModal);
 });
 
-newCard.addEventListener('click', (e) => {
+newCard.addEventListener('submit', (e) => {
   e.preventDefault();
   renderCard(cardName.value, cardUrl.value);
   toggleModal(addCard);
 });
-
-
