@@ -1,6 +1,6 @@
 function showErrorMessage(input, form, {errorClass, inputErrorClass, ...rest}) {
   const error = form.querySelector(`#${input.id}-error`);
-  error.textContent = input.validationMesage;
+  error.textContent = input.validationMessage;
 
   error.classList.add(errorClass);
   input.classList.add(inputErrorClass);
@@ -27,10 +27,10 @@ function toggleSubmitButton(inputs, button, buttonClass) {
   const isValid = inputs.every((input) => input.validity.valid);
   if (!isValid) {
     button.classList.add(`${buttonClass}`);
-    button.setAttribute("disabled", true);
+    button.disabled=true;
   } else {
     button.classList.remove(`${buttonClass}`);
-    button.setAttribute("disabled", false);
+    button.disabled=false;
   }
 }
 

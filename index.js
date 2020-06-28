@@ -18,6 +18,7 @@ const imageModal = document.querySelector('.display');
 const imageClose = imageModal.querySelector('.modal__close');
 const modalImage = document.querySelector('.display__image');
 const modalTitle = document.querySelector('.display__caption');
+const modals = Array.from(document.querySelectorAll('.modal'));
 
 const initialCards = [
   {
@@ -47,13 +48,22 @@ const initialCards = [
 ];
 
 const cardTemplate = document.querySelector(".card-template").content.querySelector(".card");
-
-
-// Close profile modal without saving changes
-function toggleModal(modal){
-    modal.classList.toggle('modal__open');
+function escapeModal(e) {
+  if (e.key === "Escape") {
+    toggleModal(document.querySelector('.modal__open'));
+  }
 }
 
+// Toggle modal visibility
+function toggleModal(modal){
+  modal.classList.toggle('modal__open');
+  if (modal.classList.contains('modal__open')) {
+    document.addEventListener('keydown', escapeModal);
+  } else {
+    document.removeEventListener('keydown', escapeModal);
+  }
+}
+// Display full image
 function displayImage(title, link){
   modalImage.src = link;
   modalImage.alt = title;
@@ -137,6 +147,14 @@ cardClose.addEventListener('click', () => {
 imageClose.addEventListener('click', () => {
   toggleModal(imageModal);
 });
+
+modals.forEach((modal) => {
+  modal.addEventListener('click', (e) => {
+    if (e.target.classList.contains("modal__open")) {
+      toggleModal(e.target);
+    }
+  })
+})
 
 newCard.addEventListener('submit', (e) => {
   e.preventDefault();

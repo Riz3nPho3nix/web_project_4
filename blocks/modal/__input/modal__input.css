@@ -7,6 +7,10 @@
   border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
+.modal__input:invalid {
+  border-bottom: 1px solid #f00;
+}
+
 @media screen and (max-width: 440px){
   .modal__input {
     font-size: 12px;

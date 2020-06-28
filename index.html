@@ -27,14 +27,16 @@
       <div class="profile-edit modal">
         <div class="modal__window">
           <button class="modal__close link"></button>
-          <form action="submit" class="modal__form">
+          <form action="submit" class="modal__form" novalidate>
             <h2 class="modal__heading">Edit Profile</h2>
+            <label class="modal__label">
             <input id="profile-name" class="modal__input set_name" type="text" name="set_name" id="set_name" value="Jacques Cousteau" minlength="2" maxlength="40" required>
             <span id="profile-name-error" class="modal__error"></span>
-
+            </label>
+            <label class="modal__label">
             <input id="profile-job" class="modal__input set_job" type="text" name="set_job" id="set_job" value="Explorer" minlength="2" maxlength="200" required>
             <span id="profile-job-error" class="modal__error"></span>
-
+            </label>
             <button class="modal__button button">Save</button>
           </form>
         </div>
@@ -42,14 +44,16 @@
       <div class="new-card modal">
         <div class="modal__window">
           <button class="modal__close link"></button>
-          <form action="submit" class="modal__form">
+          <form action="submit" class="modal__form" novalidate>
             <h2 class="modal__heading">New place</h2>
+            <label class="modal__label">
             <input id="card-title" class="modal__input location" type="text" name="name" placeholder="Title" minlength=1 maxlength=30 required>
             <span id="card-title-error" class="modal__error"></span>
-
+            </label>
+            <label class="modal__label">
             <input id="card-url" class="modal__input image-path" type="url" name="link" placeholder="Image link" required>
             <span id="card-url-error" class="modal__error"></span>
-
+            </label>
             <button class="modal__button button">Create</button>
           </form>
         </div>
