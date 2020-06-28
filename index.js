@@ -48,11 +48,7 @@ const initialCards = [
 ];
 
 const cardTemplate = document.querySelector(".card-template").content.querySelector(".card");
-function escapeModal(e) {
-  if (e.key === "Escape") {
-    toggleModal(document.querySelector('.modal__open'));
-  }
-}
+
 
 // Toggle modal visibility
 function toggleModal(modal){
@@ -61,6 +57,12 @@ function toggleModal(modal){
     document.addEventListener('keydown', escapeModal);
   } else {
     document.removeEventListener('keydown', escapeModal);
+  }
+}
+//Function to close modal window using Escape key
+function escapeModal(e) {
+  if (e.key === "Escape") {
+    toggleModal(document.querySelector('.modal__open'));
   }
 }
 // Display full image
