@@ -143,3 +143,4 @@ newCard.addEventListener('submit', (e) => {
   renderCard(cardName.value, cardUrl.value);
   toggleModal(addCard);
 });
+
