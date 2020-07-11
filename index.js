@@ -1,4 +1,4 @@
-//import {toggleModal} from "./utils.js";
+import {toggleModal} from "./utils.js";
 import Card from "./card.js";
 
 // Declare variables
@@ -19,8 +19,6 @@ const cardName = document.querySelector('.location');
 const cardUrl = document.querySelector('.image-path');
 const imageModal = document.querySelector('.display');
 const imageClose = imageModal.querySelector('.modal__close');
-const modalImage = document.querySelector('.display__image');
-const modalTitle = document.querySelector('.display__caption');
 const modals = Array.from(document.querySelectorAll('.modal'));
 
 const initialCards = [
@@ -50,87 +48,17 @@ const initialCards = [
   }
 ];
 
-//const cardTemplate = document.querySelector(".card-template").content.querySelector(".card");
-
-
-// Toggle modal visibility
-function toggleModal(modal){
-  modal.classList.toggle('modal__open');
-  if (modal.classList.contains('modal__open')) {
-    document.addEventListener('keydown', escapeModal);
-  } else {
-    document.removeEventListener('keydown', escapeModal);
-  }
-}
-//Function to close modal window using Escape key
-function escapeModal(e) {
-  if (e.key === "Escape") {
-    toggleModal(document.querySelector('.modal__open'));
-  }
-}
-
-
-
-// Display full image
-function displayImage(title, link){
-  modalImage.src = link;
-  modalImage.alt = title;
-  modalTitle.textContent = title;
-  toggleModal(imageModal);
-};
-// Add and remove full heart on places
-function toggleHeart(e){
-  e.target.classList.toggle('card__liked');
-}
-// Remove place from list on site
-function removeCard(e){
-  e.target.closest('.card').remove();
-  e.stopPropagation();
-}
-
-
-// Create cards from initial array
-
-/*function createCard(title, image) {
-
-  const cardElement = cardTemplate.cloneNode(true);
-
-  const cardTitle = cardElement.querySelector(".card__heading");
-  const cardImage = cardElement.querySelector(".card__image");
-  const cardLikeBtn = cardElement.querySelector(".card__heart");
-  const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
-
-  cardTitle.textContent = title;
-  cardImage.style.backgroundImage = `url('${image}')`;
-
-  cardLikeBtn.addEventListener("click", (e) => {
-    toggleHeart(e);
-  })
-
-  cardDeleteBtn.addEventListener("click", (e) => {
-    removeCard(e);
-  })
-
-  cardImage.addEventListener("click", () => {
-    displayImage(title, image);
-  })
-
-  return cardElement;
-}; 
-
-// Insert created cards to page
-function renderCard(title, image) {
-  cards.prepend(createCard(title, image));
-}
-*/
-
-// Add places to page
-initialCards.forEach((data) => {
+function createCard(data) {
   const item = new Card(data, ".card-template");
 
   const cardElement = item.generateCard();
 
 	cards.prepend(cardElement);
+}
+
+// Add places to page
+initialCards.forEach((data) => {
+  createCard(data);
 })
 // Create Event Listeners
 save.addEventListener('submit', (e) => {
@@ -174,7 +102,7 @@ modals.forEach((modal) => {
 
 newCard.addEventListener('submit', (e) => {
   e.preventDefault();
-  renderCard(cardName.value, cardUrl.value);
+  createCard({name:cardName.value, link:cardUrl.value});
   toggleModal(addCard);
 });
 
