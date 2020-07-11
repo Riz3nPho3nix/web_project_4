@@ -1,3 +1,6 @@
+//import {toggleModal} from "./utils.js";
+import Card from "./card.js";
+
 // Declare variables
 const editProfile = document.querySelector('.profile__edit');
 const editModal = document.querySelector('.profile-edit');
@@ -47,7 +50,7 @@ const initialCards = [
   }
 ];
 
-const cardTemplate = document.querySelector(".card-template").content.querySelector(".card");
+//const cardTemplate = document.querySelector(".card-template").content.querySelector(".card");
 
 
 // Toggle modal visibility
@@ -65,6 +68,9 @@ function escapeModal(e) {
     toggleModal(document.querySelector('.modal__open'));
   }
 }
+
+
+
 // Display full image
 function displayImage(title, link){
   modalImage.src = link;
@@ -82,8 +88,10 @@ function removeCard(e){
   e.stopPropagation();
 }
 
+
 // Create cards from initial array
-function createCard(title, image) {
+
+/*function createCard(title, image) {
 
   const cardElement = cardTemplate.cloneNode(true);
 
@@ -108,15 +116,21 @@ function createCard(title, image) {
   })
 
   return cardElement;
-};
+}; 
+
 // Insert created cards to page
 function renderCard(title, image) {
   cards.prepend(createCard(title, image));
 }
+*/
 
 // Add places to page
 initialCards.forEach((data) => {
-  renderCard(data.name, data.link);
+  const item = new Card(data, ".card-template");
+
+  const cardElement = item.generateCard();
+
+	cards.prepend(cardElement);
 })
 // Create Event Listeners
 save.addEventListener('submit', (e) => {
