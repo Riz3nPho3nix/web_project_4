@@ -1,5 +1,8 @@
 import {toggleModal} from "./utils.js";
 
+const modalImage = document.querySelector('.display__image');
+const modalText = document.querySelector('.display__caption');
+
 export default class Card {
   constructor(data, cardTemplate) {
     this._name = data.name;
@@ -23,14 +26,13 @@ export default class Card {
       e.target.classList.toggle('card__liked');
     })
     this._element.querySelector(".card__delete-btn").addEventListener("click", (e) => {
-      e.target.closest('.card').remove();
+      this._element.closest('.card').remove();
       e.stopPropagation();
     })
     this._element.querySelector(".card__image").addEventListener("click", () => {
-      const modalImage = document.querySelector('.display__image');
       modalImage.src = this._url;
       modalImage.alt = this._name;
-      document.querySelector('.display__caption').textContent = this._name;
+      modalText.textContent = this._name;
       toggleModal(document.querySelector('.display'));
     })
   }

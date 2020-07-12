@@ -18,7 +18,7 @@
             <div class="profile__info">
               <h1 class="profile__name">Jacques Cousteau</h1>
               <p class="profile__job">Explorer</p>
-              <button class="profile__edit link"></button>
+              <button class="profile__edit link" aria-label="Edit Profile"></button>
             </div>
             <button class="profile__add-btn link"></button>
         </section>
@@ -30,11 +30,11 @@
           <form action="submit" class="modal__form" novalidate>
             <h2 class="modal__heading">Edit Profile</h2>
             <label class="modal__label">
-            <input id="profile-name" class="modal__input set_name" type="text" name="set_name" id="set_name" value="Jacques Cousteau" minlength="2" maxlength="40" required>
+            <input id="profile-name" class="modal__input set_name" type="text" name="set_name" value="Jacques Cousteau" minlength="2" maxlength="40" required>
             <span id="profile-name-error" class="modal__error"></span>
             </label>
             <label class="modal__label">
-            <input id="profile-job" class="modal__input set_job" type="text" name="set_job" id="set_job" value="Explorer" minlength="2" maxlength="200" required>
+            <input id="profile-job" class="modal__input set_job" type="text" name="set_job" value="Explorer" minlength="2" maxlength="200" required>
             <span id="profile-job-error" class="modal__error"></span>
             </label>
             <button class="modal__button button">Save</button>
