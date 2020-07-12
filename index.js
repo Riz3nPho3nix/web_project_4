@@ -1,5 +1,6 @@
 import {toggleModal} from "./utils.js";
 import Card from "./card.js";
+import FormValidator from "./formValidator.js";
 
 // Declare variables
 const editProfile = document.querySelector('.profile__edit');
@@ -47,6 +48,20 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg"
   }
 ];
+
+const validateSettings = {
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible"
+}
+
+const profileFormValidate = new FormValidator(validateSettings, save);
+profileFormValidate.enableValidation();
+
+const cardFormValidate = new FormValidator(validateSettings, newCard);
+cardFormValidate.enableValidation();
 
 function createCard(data) {
   const item = new Card(data, ".card-template");

@@ -40,8 +40,32 @@ Some of the new functionality we learned includes:
 
 * Creating event listeners on mouse clicks and key presses, as well as removing event listensers
 
+# Project 7: Objects Around the U.S.
+
+What is your object orientation?
+
+This sprint we were fortunate to learn about OOP and how to use classes inside modules to split up JS files to a more manageable size.
+
+Some of the specific things we learned about this sprint are:
+
+* Classes
+
+* Encapsulation
+
+* Inheritance
+
+* Polymorphism
+
+* IIFE 
+
+* Modules
+
+As always, there is a link to my project below.
+
+
 # Website
 
 The link to my website is [here](https://riz3npho3nix.github.io/web_project_4). Hope you enjoy!
 
 *[JS]: Javascript
+*[OOP]: Object Oriented Programming
