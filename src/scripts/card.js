@@ -1,13 +1,9 @@
-import {toggleModal} from "./utils.js";
-
-const modalImage = document.querySelector('.display__image');
-const modalText = document.querySelector('.display__caption');
-
 export default class Card {
-  constructor(data, cardTemplate) {
+  constructor(data, cardTemplate, handleCardClick) {
     this._name = data.name;
     this._url = data.link;
     this._cardTemplate = cardTemplate;
+    this._handleCardClick = handleCardClick;
 	}
 
   _getTemplate() {
@@ -30,10 +26,8 @@ export default class Card {
       e.stopPropagation();
     })
     this._element.querySelector(".card__image").addEventListener("click", () => {
-      modalImage.src = this._url;
-      modalImage.alt = this._name;
-      modalText.textContent = this._name;
-      toggleModal(document.querySelector('.display'));
+      this._handleCardClick();
+
     })
   }
 
@@ -43,7 +37,7 @@ export default class Card {
 
     this._element.querySelector(".card__heading").textContent = this._name;
     this._element.querySelector(".card__image").style.backgroundImage = `url('${this._url}')`;
-    
+
 
   	return this._element;
   }

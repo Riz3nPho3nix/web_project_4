@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Around The U.S.</title>
-    <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
     <header class="header">
@@ -30,11 +29,11 @@
           <form action="submit" class="modal__form" novalidate>
             <h2 class="modal__heading">Edit Profile</h2>
             <label class="modal__label">
-            <input id="profile-name" class="modal__input set_name" type="text" name="set_name" value="Jacques Cousteau" minlength="2" maxlength="40" required>
+            <input id="profile-name" class="modal__input set_name" type="text" name="name" minlength="2" maxlength="40" required>
             <span id="profile-name-error" class="modal__error"></span>
             </label>
             <label class="modal__label">
-            <input id="profile-job" class="modal__input set_job" type="text" name="set_job" value="Explorer" minlength="2" maxlength="200" required>
+            <input id="profile-job" class="modal__input set_job" type="text" name="job" minlength="2" maxlength="200" required>
             <span id="profile-job-error" class="modal__error"></span>
             </label>
             <button class="modal__button button">Save</button>
@@ -62,7 +61,7 @@
         <div class="modal__window display__window">
           <button class="modal__close link"></button>
           <figure>
-            <img class="display__image" src="" alt="">
+            <img class="display__image">
             <figcaption class="display__caption"></figcaption>
           </figure>
         </div>
@@ -82,9 +81,4 @@
         </div>
       </li>
     </template>
-    <script type="module" src="utils.js"></script>
-    <script type="module" src="card.js"></script>
-    <script type="module" src="formValidator.js"></script>
-    <script type="module" src="index.js"></script>
-</body>
 </html>

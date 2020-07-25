@@ -56,16 +56,21 @@ Some of the specific things we learned about this sprint are:
 
 * Polymorphism
 
-* IIFE 
+* IIFE
 
 * Modules
 
-As always, there is a link to my project below.
+# Project 8: Webpack Around the U.S.
+
+*Pack it up!* This sprint we learned about bundling our projects with Webpack. We also learned about:
+
+* Object and array destructuring
+
+* Relationships between classes
+
+* Working with event listeners in classes
 
 
 # Website
 
 The link to my website is [here](https://riz3npho3nix.github.io/web_project_4). Hope you enjoy!
-
-*[JS]: Javascript
-*[OOP]: Object Oriented Programming
