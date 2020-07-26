@@ -1,14 +1,26 @@
-import Card from "../scripts/card.js";
-import FormValidator from "../scripts/formValidator.js";
-import {editProfile, editModal, save, profileName, profileJob, cards, add, addCard, newCard, displayModal} from "../utils/constants.js";
-import PopupWithImage from "../scripts/PopupWithImage.js";
-import PopupWithForm from "../scripts/PopupWithForm.js";
-import UserInfo from "../scripts/UserInfo.js";
-import Section from "../scripts/Section.js";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
+import Section from "../components/Section.js";
 import "./index.css";
 
 
 // Declare variables
+const editProfile = document.querySelector('.profile__edit');
+const editModal = document.querySelector('.profile-edit');
+const save = editModal.querySelector('.modal__form');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
+const cards = document.querySelector('.cards');
+const add = document.querySelector('.profile__add-btn');
+const addCard = document.querySelector('.new-card');
+const newCard = addCard.querySelector('.modal__form');
+const displayModal = document.querySelector('.display');
+const editName = document.querySelector('.set_name');
+const editJob = document.querySelector('.set_job');
+
 
 const initialCards = [
   {
@@ -45,6 +57,13 @@ const validateSettings = {
   errorClass: "modal__error_visible"
 }
 
+const userData = new UserInfo();
+
+
+const imageDisplay = new PopupWithImage(displayModal);
+imageDisplay.setEventListeners();
+
+
 const profileFormValidate = new FormValidator(validateSettings, save);
 profileFormValidate.enableValidation();
 
@@ -53,12 +72,8 @@ cardFormValidate.enableValidation();
 
 const cardList = new Section({
   items: initialCards,
-  renderer: (item) => {
-    const card = new Card(item, ".card-template", () => {
-        const imageDisplay = new PopupWithImage(item, displayModal);
-        imageDisplay.setEventListeners();
-        imageDisplay.open();
-    })
+  renderer: (data) => {
+    const card = new Card(data, ".card-template", (info) => {imageDisplay.open(info)})
 
     const cardElement = card.generateCard();
 
@@ -70,32 +85,31 @@ const cardList = new Section({
 
 
 const profileForm = new PopupWithForm(editModal, (data) => {
-  const userData = new UserInfo(data);
-  userData.setUserInfo();
+  userData.setUserInfo(data);
 }
 );
 
 
 
 const cardForm = new PopupWithForm(addCard, (data) => {
-  const newCard = new Card(data, ".card-template", () => {
-    const imageDisplay = new PopupWithImage(data, displayModal);
-    imageDisplay.setEventListeners();
-    imageDisplay.open();
-})
+  const newCard = new Card(data, ".card-template", (info) => {imageDisplay.open(info)})
 
   const cardElement = newCard.generateCard();
 
   cardList.addItem(cardElement);
-  }
-);
+});
 
 add.addEventListener('click', () => {cardForm.open()});
 
-editProfile.addEventListener('click', () => {const userData = new UserInfo({name:profileName.textContent, job:profileJob.textContent}); userData.getuserInfo(); profileForm.open()});
+editProfile.addEventListener('click', () => {
+  const formData = userData.getUserInfo();
+  editName.value = formData.name;
+  editJob.value = formData.job;
+  profileForm.open();
+});
 
 cardList.renderItems();
 
-cardForm.generateForm();
+cardForm.setEventListeners();
 
-profileForm.generateForm();
+profileForm.setEventListeners();

@@ -26,7 +26,7 @@ export default class Card {
       e.stopPropagation();
     })
     this._element.querySelector(".card__image").addEventListener("click", () => {
-      this._handleCardClick();
+      this._handleCardClick({name:this._name, link:this._url});
 
     })
   }
