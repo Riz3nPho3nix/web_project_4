@@ -70,6 +70,18 @@ Some of the specific things we learned about this sprint are:
 
 * Working with event listeners in classes
 
+# Project 9: APIs Around the U.S.
+
+Things are now permanent! We learned about using API fetch calls this sprint. We also learned about:
+
+* Asynchronous operations
+
+* Callbacks
+
+* Promises
+
+We also learned about object prototypes in preparing for job interviews.
+
 
 # Website
 
