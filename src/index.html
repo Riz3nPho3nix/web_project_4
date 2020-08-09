@@ -12,11 +12,12 @@
     <main class="main">
         <section class="profile">
             <div class="profile__avatar">
-              <img src="./images/cousteau.jpg" alt="Jacques Cousteau portrait" class="profile__picture">
+              <img alt="Profile portrait" class="profile__picture">
+              <button class="profile__overlay"></button>
             </div>
             <div class="profile__info">
-              <h1 class="profile__name">Jacques Cousteau</h1>
-              <p class="profile__job">Explorer</p>
+              <h1 class="profile__name"></h1>
+              <p class="profile__job"></p>
               <button class="profile__edit link" aria-label="Edit Profile"></button>
             </div>
             <button class="profile__add-btn link"></button>
@@ -33,7 +34,7 @@
             <span id="profile-name-error" class="modal__error"></span>
             </label>
             <label class="modal__label">
-            <input id="profile-job" class="modal__input set_job" type="text" name="job" minlength="2" maxlength="200" required>
+            <input id="profile-job" class="modal__input set_job" type="text" name="about" minlength="2" maxlength="200" required>
             <span id="profile-job-error" class="modal__error"></span>
             </label>
             <button class="modal__button button">Save</button>
@@ -53,7 +54,30 @@
             <input id="card-url" class="modal__input image-path" type="url" name="link" placeholder="Image link" required>
             <span id="card-url-error" class="modal__error"></span>
             </label>
-            <button class="modal__button button">Create</button>
+            <button class="modal__button button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="new-avatar modal">
+        <div class="modal__window">
+          <button class="modal__close link"></button>
+          <form action="submit" class="modal__form" novalidate>
+            <h2 class="modal__heading">Change profile picture</h2>
+            <label class="modal__label">
+            <input id="avatar-url" class="modal__input avatar-image" type="url" name="avatar" placeholder="Image link" required>
+            <span id="avatar-url-error" class="modal__error"></span>
+            </label>
+            <button class="modal__button button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="delete-card modal">
+        <div class="modal__window">
+          <button class="modal__close link"></button>
+          <form action="submit" class="modal__form" novalidate>
+            <h2 class="modal__heading">Are you sure?</h2>
+            <input type="hidden" class="modal__input card-id" name="id">
+            <button class="modal__button button">Yes</button>
           </form>
         </div>
       </div>
@@ -77,7 +101,10 @@
         </div>
         <div class="card__label">
           <h2 class="card__heading"></h2>
-          <button class="card__heart"></button>
+          <div class="card__likes">
+            <button class="card__heart"></button>
+            <p class="card__like-count"></p>
+          </div>
         </div>
       </li>
     </template>

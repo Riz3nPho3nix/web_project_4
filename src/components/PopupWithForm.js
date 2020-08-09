@@ -21,6 +21,14 @@ export default class PopupWithForm extends Popup {
     this._element.reset();
   }
 
+  setDelete(deleteHandler) {
+    this._delete = deleteHandler;
+  }
+
+  runDelete() {
+    this._delete();
+  }
+
   _getInputValues() {
     this._inputList = this._element.querySelectorAll(".modal__input");
 
