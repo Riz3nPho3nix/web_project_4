@@ -99,7 +99,7 @@ api.getAppInfo()
 
   const cardForm = new PopupWithForm(addCard, (data) => {
     loading(true, addCard);
-    api.newCard(data)
+    api.createCard(data)
     .then ((res) => {
     const newCard = new Card({
       data: res,
@@ -110,14 +110,14 @@ api.getAppInfo()
         removeModal.setDelete(() => {newCard.removeCard()});
       },
       handleLikeClick: (id) => {
-        if (card.likeButton.classList.contains('card__liked')) {
-          card.likeButton.classList.remove('card__liked');
+        if (newCard.likeButton.classList.contains('card__liked')) {
+          newCard.likeButton.classList.remove('card__liked');
           api.cardUnlike(id)
-          .then(res => card.likeCount(res.likes.length))
+          .then(res => newCard.likeCount(res.likes.length))
         } else {
-          card.likeButton.classList.add('card__liked');
+          newCard.likeButton.classList.add('card__liked');
           api.cardLike(id)
-          .then(res => card.likeCount(res.likes.length))
+          .then(res => newCard.likeCount(res.likes.length))
         }}},
         userID,
         ".card-template")

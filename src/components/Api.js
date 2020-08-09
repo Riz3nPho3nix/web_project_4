@@ -43,7 +43,7 @@ export default class Api {
     .catch( err => console.log(err))
   }
 
-  newCard(data) {
+  createCard(data) {
     return fetch(`${this._baseURL}/cards`, {
       method: "POST",
       headers: this._headers,
